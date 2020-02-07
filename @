@@ -1,0 +1,21 @@
+Adds build artifacts and caching to Github Actions
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Fri Feb 7 10:10:31 2020 -0600
+#
+# On branch actinos
+# Your branch and 'origin/actinos' have diverged,
+# and have 1 and 1 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# Changes to be committed:
+#	new file:   .github/workflows/build.yml
+#	new file:   .github/workflows/lint.yml
+#	new file:   .github/workflows/release.yml
+#	deleted:    .github/workflows/rust.yml
+#	new file:   .github/workflows/test.yml
+#	modified:   README.md
+#	renamed:    azure-pipelines.yml -> definitely-not-yaml.yml
+#
