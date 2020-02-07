@@ -1,0 +1,28 @@
+name: Linters
+
+on: [push]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    name: Clean up old linter runners
+    steps:
+    - uses: rokroskar/workflow-run-cleanup-action@v0.2.1
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    if: "!startsWith(github.ref, 'refs/tags/') && github.ref != 'refs/heads/master'"
+
+  rustfmt:
+    name: Formatter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Install Rust
+        run: |
+          rustup update stable
+          rustup default stable
+          rustup component add rustfmt
+
+      - name: Check Formatting
+        run: cargo fmt -- --check
