@@ -21,8 +21,8 @@ const getPlatform = () => {
 
 const getBinary = () => {
   const platform = getPlatform();
-  const version = require("./package.json").version;
-  const url = `https://workers.cloudflare.com/get-npm-wrangler-binary/${version}/${platform}`;
+  const version = "0.0.3";
+  const url = `https://github.com/EverlastingBugstopper/wrangler/releases/download/v${version}/wrangler-v${version}-${platform}.tar.gz`;
   const installDirectory = join(os.homedir(), ".wrangler");
   return new Binary(url, { name: "wrangler", installDirectory });
 };
